@@ -1,0 +1,817 @@
+{
+  "idmap": {
+  "36816": 0
+    ,  "36817": 1
+    ,  "29012": 2
+    ,  "61993": 3
+    ,  "1311": 4
+    ,  "62458": 5
+    ,  "60570": 6
+    ,  "38967": 7
+    ,  "78478": 8
+    ,  "52926": 9
+    ,  "52925": 10
+    ,  "61694": 11
+    ,  "56155": 12
+    ,  "34878": 13
+    ,  "31598": 14
+    ,  "34577": 15
+    ,  "50200": 16
+    ,  "31564": 17
+    ,  "33022": 18
+    ,  "87278": 19
+    ,  "56906": 20
+    ,  "42665": 21
+    ,  "56671": 22
+    ,  "61613": 23
+    ,  "61998": 24
+    ,  "29018": 25
+    ,  "49734": 26
+    ,  "63377": 27
+    ,  "49733": 28
+    ,  "49732": 29
+    ,  "60747": 30
+    ,  "34377": 31
+    ,  "31618": 32
+    ,  "96550": 33
+    ,  "97800": 34
+    ,  "30692": 35
+    ,  "50378": 36
+    ,  "63435": 37
+    ,  "95432": 38
+    ,  "95430": 39
+    ,  "95431": 40
+    ,  "95436": 41
+    ,  "95433": 42
+    ,  "95434": 43
+    ,  "103931": 44
+    ,  "103925": 45
+    ,  "103929": 46
+    ,  "103926": 47
+    ,  "103919": 48
+    ,  "103918": 49
+  },
+  "referenced": [
+  ],
+  "header": {
+    "compact": false,
+    "xmin": 370.857300,
+    "xmax": 470.078613,
+    "ymin": -63.479451,
+    "ymax": -4.906069
+  },
+  "nodes": [
+    {
+      "nodeid": "36816",
+      "name": "G/SPS/N/NIC/90",
+      "x": 427.944702,
+      "y": -13.156241,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 416
+    }
+    ,    {
+      "nodeid": "36817",
+      "name": "G/SPS/N/NIC/91",
+      "x": 427.916219,
+      "y": -13.228793,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 417
+    }
+    ,    {
+      "nodeid": "29012",
+      "name": "G/SPS/N/CAN/1041",
+      "x": 427.490072,
+      "y": -16.544955,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 312
+    }
+    ,    {
+      "nodeid": "61993",
+      "name": "G/TBT/N/UGA/669",
+      "x": 427.203817,
+      "y": -60.334325,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 393
+    }
+    ,    {
+      "nodeid": "1311",
+      "name": "G/ADP/N/132/ARG",
+      "x": 426.528687,
+      "y": -21.435565,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 611
+    }
+    ,    {
+      "nodeid": "62458",
+      "name": "G/TBT/N/UKR/78",
+      "x": 423.995402,
+      "y": -42.288373,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 158
+    }
+    ,    {
+      "nodeid": "60570",
+      "name": "G/TBT/N/THA/428",
+      "x": 423.678223,
+      "y": -54.006215,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 370
+    }
+    ,    {
+      "nodeid": "38967",
+      "name": "G/SPS/N/SGP/59",
+      "x": 421.146159,
+      "y": -40.593633,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 467
+    }
+    ,    {
+      "nodeid": "78478",
+      "name": "RD/DEV/156",
+      "x": 419.991007,
+      "y": -12.412841,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 78
+    }
+    ,    {
+      "nodeid": "52926",
+      "name": "G/TBT/N/ECU/142/Add.1",
+      "x": 417.834798,
+      "y": -40.476051,
+      "size": 1.008824,
+      "tne": 2,
+      "community": 426
+    }
+    ,    {
+      "nodeid": "52925",
+      "name": "G/TBT/N/ECU/142",
+      "x": 417.685547,
+      "y": -41.085177,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 425
+    }
+    ,    {
+      "nodeid": "61694",
+      "name": "G/TBT/N/UGA/482",
+      "x": 417.495321,
+      "y": -44.578033,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 94
+    }
+    ,    {
+      "nodeid": "56155",
+      "name": "G/TBT/N/ISR/969",
+      "x": 414.132121,
+      "y": -49.143458,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 155
+    }
+    ,    {
+      "nodeid": "34878",
+      "name": "G/SPS/N/IDN/111",
+      "x": 413.560343,
+      "y": -55.333954,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 578
+    }
+    ,    {
+      "nodeid": "31598",
+      "name": "G/SPS/N/CHL/531",
+      "x": 413.372884,
+      "y": -57.272847,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 98
+    }
+    ,    {
+      "nodeid": "34577",
+      "name": "G/SPS/N/EU/86",
+      "x": 410.736328,
+      "y": -46.237661,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 277
+    }
+    ,    {
+      "nodeid": "50200",
+      "name": "G/TBT/N/CHL/211",
+      "x": 407.014567,
+      "y": -35.660550,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 500
+    }
+    ,    {
+      "nodeid": "31564",
+      "name": "G/SPS/N/CHL/485",
+      "x": 406.914714,
+      "y": -21.849869,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 64
+    }
+    ,    {
+      "nodeid": "33022",
+      "name": "G/SPS/N/CRI/207",
+      "x": 406.420410,
+      "y": -31.938024,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 122
+    }
+    ,    {
+      "nodeid": "87278",
+      "name": "WT/ACC/LAO/36/Add.1",
+      "x": 404.752686,
+      "y": -22.356252,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 478
+    }
+    ,    {
+      "nodeid": "56906",
+      "name": "G/TBT/N/KEN/452",
+      "x": 404.593872,
+      "y": -14.485269,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 206
+    }
+    ,    {
+      "nodeid": "42665",
+      "name": "G/SPS/N/USA/2512",
+      "x": 404.442139,
+      "y": -30.016190,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 665
+    }
+    ,    {
+      "nodeid": "56671",
+      "name": "G/TBT/N/KEN/112/Rev.1",
+      "x": 404.304769,
+      "y": -14.209521,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 671
+    }
+    ,    {
+      "nodeid": "61613",
+      "name": "G/TBT/N/UGA/320",
+      "x": 403.790039,
+      "y": -24.418269,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 13
+    }
+    ,    {
+      "nodeid": "61998",
+      "name": "G/TBT/N/UGA/671",
+      "x": 403.673991,
+      "y": -15.586011,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 398
+    }
+    ,    {
+      "nodeid": "29018",
+      "name": "G/SPS/N/CAN/1045",
+      "x": 403.554606,
+      "y": -33.182627,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 318
+    }
+    ,    {
+      "nodeid": "49734",
+      "name": "G/TBT/N/CAN/464",
+      "x": 403.227702,
+      "y": -9.034982,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 34
+    }
+    ,    {
+      "nodeid": "63377",
+      "name": "G/TBT/N/USA/827/Rev.2/Add.1",
+      "x": 401.985596,
+      "y": -22.333949,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 377
+    }
+    ,    {
+      "nodeid": "49733",
+      "name": "G/TBT/N/CAN/463/Add.1",
+      "x": 401.741699,
+      "y": -12.608964,
+      "size": 1.008824,
+      "tne": 2,
+      "community": 33
+    }
+    ,    {
+      "nodeid": "49732",
+      "name": "G/TBT/N/CAN/463",
+      "x": 401.511922,
+      "y": -12.367672,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 32
+    }
+    ,    {
+      "nodeid": "60747",
+      "name": "G/TBT/N/TPKM/109",
+      "x": 397.219157,
+      "y": -18.793943,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 547
+    }
+    ,    {
+      "nodeid": "34377",
+      "name": "G/SPS/N/EU/195",
+      "x": 393.853841,
+      "y": -47.511459,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 77
+    }
+    ,    {
+      "nodeid": "31618",
+      "name": "G/SPS/N/CHL/553",
+      "x": 393.593913,
+      "y": -38.168254,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 118
+    }
+    ,    {
+      "nodeid": "96550",
+      "name": "WT/DS381/36",
+      "x": 391.042033,
+      "y": -53.650492,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 650
+    }
+    ,    {
+      "nodeid": "97800",
+      "name": "WT/DS490/12#WT/DS496/13",
+      "x": 390.798340,
+      "y": -55.650691,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 500
+    }
+    ,    {
+      "nodeid": "30692",
+      "name": "G/SPS/N/CAN/807",
+      "x": 390.486735,
+      "y": -13.399679,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 592
+    }
+    ,    {
+      "nodeid": "50378",
+      "name": "G/TBT/N/CHL/416",
+      "x": 390.219767,
+      "y": -63.479451,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 678
+    }
+    ,    {
+      "nodeid": "63435",
+      "name": "G/TBT/N/USA/927/Add.1",
+      "x": 389.855021,
+      "y": -51.116567,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 435
+    }
+    ,    {
+      "nodeid": "95432",
+      "name": "WT/DS291/27#WT/DS292/21#WT/DS293/21",
+      "x": 387.424072,
+      "y": -59.061747,
+      "size": 1.008824,
+      "tne": 2,
+      "community": 232
+    }
+    ,    {
+      "nodeid": "95430",
+      "name": "WT/DS291/25#WT/DS292/19#WT/DS293/19",
+      "x": 387.075399,
+      "y": -58.799286,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 230
+    }
+    ,    {
+      "nodeid": "95431",
+      "name": "WT/DS291/26#WT/DS292/20#WT/DS293/20",
+      "x": 387.065389,
+      "y": -58.788712,
+      "size": 1.008824,
+      "tne": 2,
+      "community": 231
+    }
+    ,    {
+      "nodeid": "95436",
+      "name": "WT/DS291/30#WT/DS292/24#WT/DS293/24",
+      "x": 384.149251,
+      "y": -56.535334,
+      "size": 1.008824,
+      "tne": 2,
+      "community": 236
+    }
+    ,    {
+      "nodeid": "95433",
+      "name": "WT/DS291/28#WT/DS292/22#WT/DS293/22",
+      "x": 384.061849,
+      "y": -57.533681,
+      "size": 1.008824,
+      "tne": 2,
+      "community": 233
+    }
+    ,    {
+      "nodeid": "95434",
+      "name": "WT/DS291/29#WT/DS292/23#WT/DS293/23",
+      "x": 383.922933,
+      "y": -56.815694,
+      "size": 1.008824,
+      "tne": 2,
+      "community": 234
+    }
+    ,    {
+      "nodeid": "103931",
+      "name": "WT/MIN(05)/ST/46",
+      "x": 382.799805,
+      "y": -58.307795,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 331
+    }
+    ,    {
+      "nodeid": "103925",
+      "name": "WT/MIN(05)/ST/40",
+      "x": 382.476766,
+      "y": -59.244746,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 325
+    }
+    ,    {
+      "nodeid": "103929",
+      "name": "WT/MIN(05)/ST/44",
+      "x": 382.419881,
+      "y": -57.997340,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 329
+    }
+    ,    {
+      "nodeid": "103926",
+      "name": "WT/MIN(05)/ST/41",
+      "x": 382.402262,
+      "y": -58.574046,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 326
+    }
+    ,    {
+      "nodeid": "103919",
+      "name": "WT/MIN(05)/ST/35",
+      "x": 382.366577,
+      "y": -57.893570,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 319
+    }
+    ,    {
+      "nodeid": "103918",
+      "name": "WT/MIN(05)/ST/34",
+      "x": 382.179443,
+      "y": -58.515167,
+      "size": 1.008824,
+      "tne": 1,
+      "community": 318
+    }
+  ],
+  "relations": [
+    {
+      "quadA": "quad_rllllllll",
+      "nodeidA": "95434",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "95433"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "49735",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "49733"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "103811",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "103926"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "96551",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "96550"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "34879",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "34878"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "29013",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "29012"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "103811",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "103925"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "56907",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "56671"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "52927",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "52926"
+    }
+    ,    {
+      "quadA": "quad_rllllllll",
+      "nodeidA": "52926",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "52925"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "103811",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "103929"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "50379",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "50378"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "36818",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "36816"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "63436",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "63435"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "95437",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "95436"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "61994",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "61993"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "34378",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "34377"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "78479",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "78478"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "30693",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "30692"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "36818",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "36817"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "63376",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "63377"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "60571",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "60570"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "34578",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "34577"
+    }
+    ,    {
+      "quadA": "quad_rllllllll",
+      "nodeidA": "95431",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "95430"
+    }
+    ,    {
+      "quadA": "quad_rllllllll",
+      "nodeidA": "49733",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "49732"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "60748",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "60747"
+    }
+    ,    {
+      "quadA": "quad_rllllllll",
+      "nodeidA": "95436",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "95434"
+    }
+    ,    {
+      "quadA": "quad_rllllllll",
+      "nodeidA": "95433",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "95432"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "50201",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "50200"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "103811",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "103919"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "31599",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "31598"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "56907",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "56906"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "87279",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "87278"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "33023",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "33022"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "103811",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "103918"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "103811",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "103931"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "61614",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "61613"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "61695",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "61694"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "49735",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "49734"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "56156",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "56155"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "97841",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "97800"
+    }
+    ,    {
+      "quadA": "quad_rllllllll",
+      "nodeidA": "95432",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "95431"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "29019",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "29018"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "61999",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "61998"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "42666",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "42665"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "31565",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "31564"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "38968",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "38967"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "31619",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "31618"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "1312",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "1311"
+    }
+    ,    {
+      "quadA": "quad_rlllllllll",
+      "nodeidA": "62459",
+      "quadB": "quad_rllllllll",
+      "nodeidB": "62458"
+    }
+    ]
+}

@@ -1,0 +1,390 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Lora|Source+Sans+Pro|Source+Code+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="shinglesite.css">
+    <link rel="stylesheet" href="shingle.css">
+    <link rel="stylesheet" href="shingleInfoPanel.css">
+    <script src="shingle.js" type="text/javascript"></script>
+    <script src="shingleInfoPanel.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class = "pane title">
+      <center>
+        <h1>shingle.js</h1>
+        <h2>Publish large interactive graphs online</h2>
+      </center>
+    </div>
+    <div id="shinglecontainer" data-width="100%" data-height="6in" data-graph-path="random-graph_500000/" data-node-field="nodenumber" ></div>
+    <!-- with use of the node mapServer.js
+    <div id="shinglecontainer" data-width="100%" data-height="6in" data-graph-path="data-graph-path="http://127.0.0.1:8088/shinglejs/random-graph_500000/"/" data-node-field="nodenumber" ></div>
+    -->
+
+
+    <center>
+      <div class = "pane card" >
+<span class="shinglecaption">
+A random graph containing 500,000 nodes and 500,000 edges. You can pan and zoom around the map seamlessly.
+</span>
+<p style="padding:0.25in;"></p>
+<div class="intro">
+shingle.js is designed to publish large interactive graphs online.
+<p>
+It consists of two parts: an off-line tool that chops your large network graph into tiles stored in json files, and a Javascript library which loads these tiles when in view and inserts and removes them from the DOM of a single svg element.
+</div>
+
+
+
+
+
+
+
+<h3>Steps for designing large graphs for online visualization</h3>
+For visualization or large network graphs through shingle.js, a few preliminary steps are advisable.
+
+<h4>The data</h4>
+It only makes sense to use shingle.js if you have a huge graph, in the millions of nodes and edges between the nodes. In addition, the nodes and edges may be annotated with weights, labels and categorizations.
+
+<h4>Layouts</h4>
+In order to draw the graph onto a two-dimensional plane, a "layout" has to be created: each node needs to be assigned a position in a two-dimensional plane.  Shingle currently does not offer facilities for creating layouts, so external software needs to be used for that.
+<p>
+There are various algorithms that can do it, but OpenOrd seems to be the only program that can handle really huge datasets, so OpenOrd seems to be the only option currently.
+<p>
+OpenOrd allows for tuning parameters, and it is useful to play with these parameters, to get the visualization just right. It may take several iterations to get the parameters right.
+
+<h4>Node and edge categorizations</h4>
+The nodes and edges may come with their own categorizations. Otherwise, some heuristic method may be used to determine categorizations. The current algorithms for community detection do not seem to be capable of handling truly large data sets.
+
+<h4>Visual design</h4>
+The graph needs to be designed visually also to help communicate the information presented. The default design might not suit the purposes. Node and edge sizes and colors and associated icons and labels need to be determined, as well as what information needs to be shown when clicking on a node or an edge.
+
+<h4>Importing the data into the shingle toolchain</h4>
+A front-end program needs to be written to convert the graph data into a format the Shingle processing tools can deal with.
+
+<h4>Deployment</h4>
+In the end, after that, the Shingle processing tools can run, reading in the graph and generating the tiles needed for the Javascript code to display the graph.
+
+
+<h3>Usage instructions</h3>
+The package contains an utility that chops up a graph into tiles, and a Javascript framework that allows display of the tiled graph, using svg.
+
+<h3>Build instructions</h3>
+
+<ul>
+  <li>Download source code <a href="https://github.com/ayalpinkus/shinglejs">here</a>.</li>
+  <li>Edit the 'makeinclude' file: modify at least OUTPUT_PATH so that it points to a directory where the resulting output files can be stored.</li>
+  <li>Type 'make'</li>
+</ul>
+
+That's it! The OUTPUT_PATH directory should now contain a directory 'random-graph_500000'. Open the file '_sample.html' inside that directory, and you should see the above map.
+
+<h3>How it works</h3>
+
+There are two executables in the bin/ directory inside the OUTPUT_PATH directory:
+<ul>
+  <li>json2bin.a - converts a json file containing a graph into a binary form, preparing it for the next step</li>
+  <li>quadbuilder.a - splits up the graph into tiles</li>
+</ul>
+
+These commands are invoked as follows: to for example convert a graph in json_input.json and have the results stored in the directory graph_output_path/, invoke the commands:
+
+<pre class="shinglecode">
+$(OUTPUT_PATH)bin/json2bin.a json_input.json nodes.bin edges.bin
+$(OUTPUT_PATH)bin/quadbuilder.a nodes.bin edges.bin graph_output_path/
+</pre>
+
+In addition, the files shingle.js and shingle.css are needed.
+<p>
+A minimal html file that contains the graph:
+
+<pre class="shinglecode">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" href="shingle.css"&gt;
+    &lt;script src="shingle.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id="shinglecontainer" data-width="100%" data-height="6in" data-graph-path="graph_output_path/" &gt;&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>
+With the basic parameters to a shinglecontainer div:
+<ul>
+  <li><span class="shinglecode">data-width="..."</span> - specify width of the graph viewer</li>
+  <li><span class="shinglecode">data-height="..."</span> - specify the height of the graph viewer</li>
+  <li><span class="shinglecode">data-graph-path="..."</span> - specify the path to the data. Useful for providing more graphs, or for destroying the browser cache.</li>
+  <li><span class="shinglecode">data-node-field="..."</span> - the name to use in the link to specify what node to highlight initially.</li>
+  <li><span class="shinglecode">data-debug-quads="true"</span> - show the tile boundaries, for debugging purposes.</li>
+
+</ul>
+Shingle can display info about active or hovered nodes in an info panel in the graph. The info panel is a separate supplied component that can be synchronized using callbacks.
+</p>
+
+<p>The JS code to show the graph on a page, including info panel:</p>
+
+<pre class="shinglecode">
+/*
+ * create an info component in the graph panel, here we use the supplied shingleInfoPanel.js
+ */
+var theInfoData = new shingleInfoPanel();
+
+/*
+ * create the graph
+ */
+var myGraph = shingle.new({
+  // use the created element
+  el: document.getElementById("shinglecontainer"),
+  // supply info panel content
+  infoContentEl: theInfoData.el,
+  onClear: function() {
+    //
+    // clear the info panel
+    theInfoData.clear();
+  }, onFocus: function(quadid, nodeid, data) {
+    //
+    // when clicked on node in graph set this node in the info panel
+    theInfoData.setMainNode(quadid, nodeid, data);
+  }, onFocusRelatedNode: function(quadid, nodeid, data) {
+    //
+    // when clicked on node in graph this is called for each related node
+    // set the related nodes in the info panel
+    theInfoData.appendRelatedNode(quadid, nodeid, data);
+  }, onHoverIn: function(quadid, nodeid) {
+    //
+    // when hovered (mousover) on node in graph highlight in the info panel
+    theInfoData.highLightNode(quadid,nodeid);
+  }, onHoverOut: function() {
+    //
+    // when blur (mousout) on node in graph unhighlight in the info panel
+    theInfoData.unHighLightNode();
+  }
+});
+
+/*
+ * set the info panel hover behaviour
+ */
+theInfoData.onHover(function(quadId, nodeId) {
+  //
+  // highlight the hovered node in the graph
+  myGraph.hoverIn(quadId, nodeId);
+});
+
+/*
+ * set the info panel click behaviour
+ */
+theInfoData.onClick(function(quadid, nodeid) {
+  //
+  // make the cliched node active in the graph
+  myGraph.changehighlightTo(quadid, nodeid);
+});
+</pre>
+
+<p>
+To run without the info panel simply delete the 'theInfoData' logic and omit the 'infoContentEl' parameter. To create your own info panel or custom behaviour attached to graph UI actions you can create your own components, and wire it up to shingle using the callbacks specified in shingle.new.
+</p>
+
+<p>
+Parameters can be supplied as data attributes of the shinglecontainer, or passed to the JS shingle.new call without the 'data' part and in camelCase. So for instance we could replace the 'data-graph-path' attribute with a graphPath parameter in the call to shingle.new:
+<pre class="shinglecode">
+...
+
+/*
+ * create the graph
+ */
+var myGraph = shingle.new({
+  // use the created element
+  el: document.getElementById("shinglecontainer"),
+  // supply info panel content
+  infoContentEl: theInfoData.el,
+  graphPath: 'graph_output_path/',
+  ...
+</pre>
+</p>
+
+<p>
+More advanced parameters:
+<ul>
+  <li><span class="shinglecode">initialZoom: "..."</span> - specify initial zoom level (1-100)</li>
+  <li><span class="shinglecode">scrollZoom: true | false</span> - scrolling in the graph zooms (mousewheel), default true</li>
+  <li><span class="shinglecode">scrollZoomInitDelay: "..."</span> - milliseconds to wait after scrolling to trigger zoom, to prevent long page scrolls to get stuck in a zoom action when passing the graph, default 400</li>
+  <li><span class="shinglecode">fontFamily: "sans"</span> - font to use for text in the graph</li>
+  <li><span class="shinglecode">fontColor: [r, g, b, a]</span> - color for text in the graph, specified as array of rgb or rgba values</li>
+  <li><span class="shinglecode">nodeColors: [[r, g, b, a], .. ]</span> - color scheme, array of colors to use in the graph for the communities, the colors are specified as arrays of rgb or rgba values, and cycles if the number of communities exceeds the number of colors</li>
+  <li><span class="shinglecode">renderWhenNodeNotFound</span> - when false no map is displayed, default true</li>
+  <li><span class="shinglecode">selectNodes</span> - can the user select nodes by clicking or touching them? default true</li>
+  <li><span class="shinglecode">panning</span> - dragging the map is allowed? default true</li>
+  <li><span class="shinglecode">zoomSlider</span> - can the user zoom in / out using a zoomslider? default false</li>
+  <li><span class="shinglecode">staticMap</span> - disable zooming, panning and selecting nodes, default false</li>
+  <li><span class="shinglecode">showRelatedNodeNames</span> - false, true (display related node names), 'hover' (display on hover of related node)</li>
+  <li><span class="shinglecode">fontSize</span> - option to set a fixed fontsize in px for display, default 18</li>
+  <li><span class="shinglecode">textGrow</span> - will the text grow when the zoomlevel increases above initialzoom?</li>default true</li>
+  <li><span class="shinglecode">textShrink</span> - will the text shrink when the zoomlevel increases above initialzoom? default false</li>
+  <li>textGrow and textShrink increase or decrease the font size displayed linear to the zoomlevel</li>
+  <li><span class="shinglecode">relatedFontSize</span> - font size for related nodes names when displayed</li>
+  <li><span class="shinglecode">translateOffsetX</span> - added SVG CSS X translate offset</li>
+  <li><span class="shinglecode">translateOffsetY</span> - added SVG CSS Y translate offset</li>
+</ul>
+</p>
+
+<p>
+More advanced callback function parameters:
+<ul>
+  <li><span class="shinglecode">onNodeNotFound</span> - callback function called when node specified by nodeid parameter was not found</li>
+  <li><span class="shinglecode">onQuadsDrawn</span> - called each time quads are drawn</li>
+  <li><span class="shinglecode">onFirstQuadDrawn</span> - called the first time a quad is drawn</li>
+</ul>
+</p>
+
+<p>
+Functions to use with the shingle object (returned by shingle.new):
+<ul>
+  <li><span class="shinglecode">zoomIn</span> - zoom in using step supplied in option zoomStep, default 5%</li>
+  <li><span class="shinglecode">zoomOut</span> - zoom out using step supplied in option zoomStep, default 5%</li>
+  <li><span class="shinglecode">zoomReset</span> - reset zoom level to option intitialZoom</li>
+</ul>
+</p>
+
+<p>
+  All CSS classnames start with shingle-, if this still would collide with your css you can overrule the classnames by supplying custom classnames in parameters: containerClass, containerWithFocusClass, scaleElClass, translationElClass, nodeClass, nodeTextClass and mapClass.
+</p>
+
+<p>
+See <a href="_sample.html">_sample.html</a> for an example of how to then display the graph, or an example where an initial node is highlighted: <a href="_sample.html?nodenumber=499600">_sample.html?nodenumber=499600</a>, or an example showing the edges of the tiles: <a href="_sample.html?debugquads=true">_sample.html?debugquads=true</a>
+</p>
+
+<p>
+The primary input file for the tool chain is a json file that contains an array of nodes and an array of edges between the nodes, in the following format:
+
+<pre class="shinglecode">
+{
+  "nodes":
+  [
+    {
+      "nodeid": "0",
+      "name": "Node number 0",
+      "x": -4.69657,
+      "y": -111.763,
+      "size": 1,
+      "community": 644
+    },
+
+    ...
+
+    {
+      "nodeid": "99999",
+      "name": "Node number 99999",
+      "x": -345.672,
+      "y": -154.746,
+      "size": 1,
+      "community": 334
+    }
+  ],
+  "relations":
+  [
+    {
+      "nodeidA": "0",
+      "nodeidB": "489087",
+      "strength": 1.000000
+    },
+
+    ...
+
+    {
+      "nodeidA": "499957",
+      "nodeidB": "499964",
+      "strength": 1.000000
+    }
+  ]
+}
+
+</pre>
+
+
+This distribution comes with one example graph, 'sampledata/random-graph_500000.json', which is the one you see in the banner above.
+
+
+
+<h3>License</h3>
+<ul>
+  <li>shingle.js is released under the <a href="APACHE_LICENSE-2.0.txt">Apache 2.0 license</a></li>
+</ul>
+<h3>Contributors</h3>
+<ul>
+  <li><script type="text/javascript">document.write(unescape('%3C%61%20%63%6C%61%73%73%3D%22%73%68%69%6E%67%6C%65%6D%61%69%6C%22%20%68%72%65%66%3D%22%6D%61%69%6C%74%6F%3A%61%70%69%6E%6B%75%73%40%78%73%34%61%6C%6C%2E%6E%6C%22%3E%41%79%61%6C%20%50%69%6E%6B%75%73%3C%2F%61%3E'));</script></li>
+  <li>Ingrid Halters</li>
+  <li>Rene Buhrs</li>
+</ul>
+<p style="padding:0.25in;"></p>
+<span class="copyrightnotice"></span>
+<p style="padding:0.125in;"></p>
+
+      </div>
+    </center>
+
+  <script>
+    /*
+     * create an info component in the graph panel, here we use the supplied shingleInfoPanel.js
+     */
+    var theInfoData = new shingleInfoPanel();
+
+    /*
+     * create the graph
+     */
+    var myGraph = shingle.new({
+      // use the created element
+      el: document.getElementById("shinglecontainer"),
+      // supply info panel content
+      infoContentEl: theInfoData.el,
+
+      nodeRadiusScaleFactor : 1/200.0,
+      nodeRadiusScalePower: 0.25,
+      initialZoom : 2,
+      useBitmap:true,
+      useMarkers:true,
+
+      onClear: function() {
+        //
+        // clear the info panel
+        theInfoData.clear();
+      }, onFocus: function(quadid, nodeid, data) {
+        //
+        // when clicked on node in graph set this node in the info panel
+        theInfoData.setMainNode(quadid, nodeid, data);
+      }, onFocusRelatedNode: function(quadid, nodeid, data) {
+        //
+        // when clicked on node in graph this is called for each related node
+        // set the related nodes in the info panel
+        theInfoData.appendRelatedNode(quadid, nodeid, data);
+      }, onHoverIn: function(quadid, nodeid) {
+        //
+        // when hovered (mousover) on node in graph highlight in the info panel
+        theInfoData.highLightNode(quadid,nodeid);
+      }, onHoverOut: function() {
+        //
+        // when blur (mousout) on node in graph unhighlight in the info panel
+        theInfoData.unHighLightNode();
+      }
+    });
+
+    /*
+     * set the info panel hover behaviour
+     */
+    theInfoData.onHover(function(quadId, nodeId) {
+      //
+      // highlight the hovered node in the graph
+      myGraph.hoverIn(quadId, nodeId);
+    });
+
+    /*
+     * set the info panel click behaviour
+     */
+    theInfoData.onClick(function(quadid, nodeid) {
+      //
+      // make the cliched node active in the graph
+      myGraph.changehighlightTo(quadid, nodeid);
+    });
+  </script>
+
+  </body>
+</html>
